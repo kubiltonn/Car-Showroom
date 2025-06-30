@@ -1,0 +1,84 @@
+﻿@model Car_izma.data.Models.Car
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-dark text-white shadow-lg border-0">
+                <div class="card-body">
+                    <h3 class="mb-4 fw-bold text-danger text-center">Yeni Araba Ekle</h3>
+                    <form asp-action="Edit" asp-controller="Car" method="post">
+                        <input type="hidden" asp-for="CarId" />
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label asp-for="Marka" class="form-label">Marka</label>
+                                <input asp-for="Marka" type="text" class="form-control bg-secondary text-white" placeholder="Marka">
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Model" class="form-label">Model</label>
+                                <input asp-for="Model" type="text" class="form-control bg-secondary text-white" placeholder="Model">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="Yil" class="form-label">Yıl</label>
+                                <input asp-for="Yil" type="number" class="form-control bg-secondary text-white" placeholder="2024">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="Renk" class="form-label">Renk</label>
+                                <input asp-for="Renk" type="text" class="form-control bg-secondary text-white" placeholder="Renk">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="Plaka" class="form-label">Plaka</label>
+                                <input asp-for="Plaka" type="text" class="form-control bg-secondary text-white" placeholder="34 ABC 123">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="SaseNo" class="form-label">Şase No</label>
+                                <input asp-for="SaseNo" type="text" class="form-control bg-secondary text-white" placeholder="SASE1234">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="MotorNo" class="form-label">Motor No</label>
+                                <input asp-for="MotorNo" type="text" class="form-control bg-secondary text-white" placeholder="MOTOR1234">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="Km" class="form-label">KM</label>
+                                <input asp-for="Km" type="number" class="form-control bg-secondary text-white" placeholder="Kilometre">
+                            </div>
+                            <div class="col-md-12">
+                                <label asp-for="Fiyat" class="form-label">Fiyat</label>
+                                <input asp-for="Fiyat" type="number" class="form-control bg-secondary text-white" placeholder="Fiyat">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="VitesTipi" class="form-label">Vites Tipi</label>
+                                <input asp-for="VitesTipi" type="text" class="form-control bg-secondary text-white" placeholder="Otomatik/Manuel">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="YakıtTipi" class="form-label">Yakıt Tipi</label>
+                                <input asp-for="YakıtTipi" type="text" class="form-control bg-secondary text-white" placeholder="Benzin/Dizel/Elektrik">
+                            </div>
+                            <div class="col-md-4">
+                                <label asp-for="KasaTipi" class="form-label">Kasa Tipi</label>
+                                <input asp-for="KasaTipi" type="text" class="form-control bg-secondary text-white" placeholder="Hatchback/SUV/Sedan/Coupe">
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="ShowroomId" class="form-label">Showroom</label>
+                                <select asp-for="ShowroomId" class="form-control bg-secondary text-white" asp-items="ViewBag.Showrooms">
+                                    <option value="">-- Showroom Seçin --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Görsel Bağlantısı (URL)</label>
+                                <input name="imageUrl" type="text" class="form-control bg-secondary text-white" placeholder="https://ornek.com/resim.jpg" value="@ViewBag.ImageUrl">
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="CarAciklama" class="form-label">Açıklama</label>
+                                <textarea asp-for="CarAciklama" class="form-control bg-secondary text-white" rows="3" placeholder="Açıklama"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-between">
+                            <button type="submit" class="btn btn-danger px-4">Güncelle</button>
+                            <a href="@Url.Action("Cars", "Car")" class="btn btn-secondary px-4">İptal</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

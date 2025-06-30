@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Car_izma.web.Views.ViewModel.SalesReportViewModel>
+@{
+    ViewData["Title"] = "Satış Raporu";
+    var currentSort = ViewBag.CurrentSort as string;
+}
+<h1 class="mb-4">Satış Raporu</h1>
+
+<form method="get" class="mb-3 d-flex flex-wrap gap-2 align-items-center">
+    <label for="sortOrder" class="me-2 fw-bold">Sırala:</label>
+    <select name="sortOrder" id="sortOrder" class="form-select w-auto" onchange="this.form.submit()">
+        @if (currentSort == "tarih_azalan" || string.IsNullOrEmpty(currentSort)) {
+            <option value="tarih_azalan" selected>Tarihe göre (Yeni → Eski)</option>
+        } else {
+            <option value="tarih_azalan">Tarihe göre (Yeni → Eski)</option>
+        }
+        @if (currentSort == "tarih_artan") {
+            <option value="tarih_artan" selected>Tarihe göre (Eski → Yeni)</option>
+        } else {
+            <option value="tarih_artan">Tarihe göre (Eski → Yeni)</option>
+        }
+        @if (currentSort == "fiyat_artan") {
+            <option value="fiyat_artan" selected>Fiyata göre (Artan)</option>
+        } else {
+            <option value="fiyat_artan">Fiyata göre (Artan)</option>
+        }
+        @if (currentSort == "fiyat_azalan") {
+            <option value="fiyat_azalan" selected>Fiyata göre (Azalan)</option>
+        } else {
+            <option value="fiyat_azalan">Fiyata göre (Azalan)</option>
+        }
+        @if (currentSort == "musteri_az") {
+            <option value="musteri_az" selected>Müşteri İsmi (A-Z)</option>
+        } else {
+            <option value="musteri_az">Müşteri İsmi (A-Z)</option>
+        }
+        @if (currentSort == "musteri_za") {
+            <option value="musteri_za" selected>Müşteri İsmi (Z-A)</option>
+        } else {
+            <option value="musteri_za">Müşteri İsmi (Z-A)</option>
+        }
+        @if (currentSort == "araba_az") {
+            <option value="araba_az" selected>Araba (A-Z)</option>
+        } else {
+            <option value="araba_az">Araba (A-Z)</option>
+        }
+        @if (currentSort == "araba_za") {
+            <option value="araba_za" selected>Araba (Z-A)</option>
+        } else {
+            <option value="araba_za">Araba (Z-A)</option>
+        }
+    </select>
+</form>
+
+<div class="mb-4">
+    <strong>Toplam Satış:</strong> @ViewBag.TotalSales <br />
+    <strong>Toplam Gelir:</strong> @ViewBag.TotalRevenue.ToString("N2") ₺
+</div>
+<table class="table table-dark table-striped table-bordered report-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Araba</th>
+            <th>Müşteri</th>
+            <th>Satıcı</th>
+            <th>Tarih</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sale in Model)
+        {
+            <tr>
+                <td>@sale.Id</td>
+                <td>@sale.CarInfo</td>
+                <td>@sale.MusteriAdSoyad</td>
+                <td>@sale.UserName</td>
+                <td>@sale.SatisTarihi.ToString("dd.MM.yyyy")</td>
+                <td>@sale.SatisFiyati.ToString("N2") ₺</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Styles {
+    <style>
+        .report-table th, .report-table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+        .report-table thead th {
+            background: #b71c1c;
+            color: #fff;
+            border-bottom: 2px solid #ff1744;
+        }
+        .report-table tbody tr:hover {
+            background: #2d2d2d;
+        }
+    </style>
+}

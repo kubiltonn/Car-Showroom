@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Car_izma.data.Models.Satislar>
+
+<div class="container py-5">
+    <div class="d-flex justify-content-end mb-1">
+        <a asp-action="Create" asp-controller="Sale" class="btn btn-warning">
+            <i class="fas fa-plus fa-sm text-white-50"></i> Yeni Satış Ekle
+        </a>
+    </div>
+    <h2 class="text-center fw-bold mb-4">Satışlar</h2>
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Satış Yapılan Araba</th>
+                    <th scope="col">Satış Sorumlusu</th>
+                    <th scope="col">Müşteri Ad-Soyad</th>
+                    <th scope="col">Müşteri Telefon Numarası</th>
+                    <th scope="col">Satış Tarihi</th>
+                    <th scope="col">Satış Fiyatı</th>
+                    
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.Id</th>
+                        <td>@item.Car?.Marka , @item.Car.Model</td>
+                        <td>@item.User?.AdSoyad</td>
+                        <td>@item.MusteriAdSoyad</td>
+                        <td>@item.MusteriTelefon</td>
+                        <td>@item.SatisTarihi</td>
+                        <td>@item.SatisFiyati</td>
+                       
+
+                        <td class="row">
+                            
+                            <a asp-action="Edit" asp-controller="Sale" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">
+                                Düzenle
+                            </a>
+                            <a asp-action="Delete" asp-controller="Sale" asp-route-id="@item.Id" class="btn btn-sm btn-dark">
+                                Sil
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Car_izma.data.Models.Car>
+
+<div class="container py-5">
+    <div class="d-flex justify-content-end mb-1">
+        <a asp-action="Create" asp-controller="Car" class="btn btn-warning">
+            <i class="fas fa-plus fa-sm text-white-50"></i> Yeni Araç Ekle
+        </a>
+    </div>
+    <h2 class="text-center fw-bold mb-4">Arabalar</h2>
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Showroom</th>
+                    <th scope="col">Marka</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Yıl</th>
+                    <th scope="col">Renk</th>
+                    <th scope="col">Plaka</th>
+                    <th scope="col">ŞaseNo</th>
+                    <th scope="col">MotorNo</th>
+                    <th scope="col">Yakıt Tipi</th>
+                    <th scope="col">Vites Tipi</th>
+                    <th scope="col">Kasa Tipi</th>
+                    <th scope="col">KM</th>
+                    <th scope="col">Fiyat</th>
+                    <th scope="col">Açıklama</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.CarId</th>
+                        <td>@item.Showroom?.ShowroomAd</td>
+                        <td>@item.Marka</td>
+                        <td>@item.Model</td>
+                        <td>@item.Yil</td>
+                        <td>@item.Renk</td>
+                        <td>@item.Plaka</td>
+                        <td>@item.SaseNo</td>
+                        <td>@item.MotorNo</td>
+                        <td>@item.YakıtTipi</td>
+                        <td>@item.VitesTipi</td>
+                        <td>@item.KasaTipi</td>
+                        <td>@item.Km</td>
+                        <td>@item.Fiyat</td>
+                        <td style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            @item.CarAciklama
+                        </td>
+
+                        <td class="row">
+                            <a asp-action="Review" asp-controller="Car" asp-route-id="@item.CarId" class="btn btn-sm btn-danger">
+                                İncele
+                            </a>
+                            <a asp-action="Edit" asp-controller="Car" asp-route-id="@item.CarId" class="btn btn-sm btn-secondary">
+                                Düzenle
+                            </a>
+                            <a asp-action="Delete" asp-controller="Car" asp-route-id="@item.CarId" class="btn btn-sm btn-dark">
+                                Sil
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

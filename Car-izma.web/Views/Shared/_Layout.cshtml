@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Carizma Showroom</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Car_izma.web.styles.css" asp-append-version="true" />
+    <style>
+        .glass-navbar {
+            background: rgba(24, 25, 26, 0.85) !important;
+            backdrop-filter: blur(8px);
+            border-bottom: 3px solid #b30000;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.4);
+        }
+        .glass-hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .glass-hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, #18191a 60%, #b30000 100%);
+            opacity: 0.85;
+            z-index: 1;
+        }
+        .glass-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 3rem 2rem;
+            color: #fff;
+            text-shadow: 2px 2px 8px #b30000;
+        }
+        .navbar-nav .nav-link.active, .navbar-nav .nav-link:focus {
+            border-bottom: 2.5px solid #b30000;
+            border-radius: 0;
+        }
+        .navbar-nav .nav-link {
+            margin: 0 0.5rem;
+            padding-bottom: 0.3rem;
+        }
+        .footer {
+            font-size: 0.95rem;
+            padding: 1rem 0 0.5rem 0;
+            background: #18191a !important;
+            border-top: 2px solid #b30000 !important;
+        }
+    </style>
+    @RenderSection("Styles", required: false)
+</head>
+<body class="bg-dark text-light">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark glass-navbar rounded-bottom-4 mt-2 mx-2">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="Carizma Logo" width="40" height="40" class="me-2"/>
+                    <span class="fw-bold fs-4" style="color: #b30000; letter-spacing: 2px;">Carizma Showroom</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-light active" asp-area="" asp-controller="Home" asp-action="Index">Showroom</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="@Url.ActionLink("Cars","Car")">Cars</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="@Url.ActionLink("Sales","Sale")">Sales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="@Url.ActionLink("Sales","Report")">Satış Raporu</a>
+                        </li>
+                     
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="@Url.ActionLink("Contact","Contact")">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+       
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer mt-auto text-white">
+        <div class="container text-center">
+            <span style="color: #b30000; font-weight: bold;">&copy; 2025 Carizma Showroom | All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

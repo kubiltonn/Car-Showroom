@@ -1,0 +1,105 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+body, html {
+  background: #18191a !important;
+  color: #f5f5f5 !important;
+}
+
+.navbar {
+  background: #18191a !important;
+  border-bottom: 3px solid #b30000 !important;
+}
+
+.navbar-brand span {
+  color: #b30000 !important;
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  color: #f5f5f5 !important;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #b30000 !important;
+}
+
+section.bg-light, section {
+  background: linear-gradient(90deg, #18191a 60%, #b30000 100%) !important;
+  color: #fff !important;
+}
+
+.display-4 {
+  color: #fff !important;
+  text-shadow: 2px 2px 8px #b30000;
+}
+
+.lead {
+  color: #b30000 !important;
+  font-weight: bold;
+}
+
+.footer {
+  background: #18191a !important;
+  border-top: 3px solid #b30000 !important;
+  color: #fff !important;
+}
+
+.footer span {
+  color: #b30000 !important;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #b30000 !important;
+  border-color: #900000 !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: #900000 !important;
+  border-color: #b30000 !important;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+

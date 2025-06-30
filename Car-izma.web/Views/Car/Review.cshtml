@@ -1,0 +1,35 @@
+﻿@model Car_izma.data.Models.Car
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Araba resmi -->
+            <div class="text-center mb-4">
+                @{
+                    var imagePath = Model.CarImages?.FirstOrDefault()?.ImagePath ?? "/images/no-image.png";
+                }
+                <img src="@imagePath" alt="@Model.Marka @Model.Model" class="img-fluid rounded shadow" style="max-height: 350px;">
+            </div>
+            <!-- Özellikler -->
+            <div class="card bg-dark text-white mb-4">
+                <div class="card-body">
+                    <h2 class="card-title fw-bold mb-3">@Model.Marka @Model.Model</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-dark text-white">Yıl: <span class="fw-bold">@Model.Yil</span></li>
+                        <li class="list-group-item bg-dark text-white">KM: <span class="fw-bold">@Model.Km</span></li>
+                        <li class="list-group-item bg-dark text-white">Vites: <span class="fw-bold">@Model.VitesTipi</span></li>
+                        <li class="list-group-item bg-dark text-white">Yakıt: <span class="fw-bold">@Model.YakıtTipi</span></li>
+                        <li class="list-group-item bg-dark text-white">Kasa: <span class="fw-bold">@Model.KasaTipi</span></li>
+                        <li class="list-group-item bg-dark text-white">Fiyat: <span class="fw-bold">@Model.Fiyat ₺</span></li>
+                        <li class="list-group-item bg-dark text-white">Showroom: <span class="fw-bold">@Model.Showroom?.ShowroomAd</span></li>
+                        <li class="list-group-item bg-dark text-white">Açıklama: <span class="fw-bold">@Model.CarAciklama</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Geri Dön Butonu -->
+            <div class="text-center">
+                <a href="@Url.Action("Cars","Car")" class="btn btn-secondary">← Geri Dön</a>
+            </div>
+        </div>
+    </div>
+</div>

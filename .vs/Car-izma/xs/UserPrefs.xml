@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{EFB98490-4C5A-4FCF-94FE-1117B7B36E48}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Car-izma.web/Views/Report/Sales.cshtml">
+    <Files>
+      <File FileName="Car-izma.web/Controllers/CarController.cs" />
+      <File FileName="Car-izma.web/Controllers/SaleController.cs" />
+      <File FileName="Car-izma.web/Views/Sale/Create.cshtml" />
+      <File FileName="Car-izma.web/Views/Car/Create.cshtml" />
+      <File FileName="Car-izma.web/Views/Car/Edit.cshtml" />
+      <File FileName="Car-izma.web/Views/Car/Delete.cshtml" />
+      <File FileName="Car-izma.web/Views/Sale/Sales.cshtml" />
+      <File FileName="Car-izma.web/Views/Shared/_Layout.cshtml" />
+      <File FileName="Car-izma.web/Views/Sale/Edit.cshtml" />
+      <File FileName="Car-izma.web/Views/Sale/Delete.cshtml" />
+      <File FileName="Car-izma.web/Views/Car/Cars.cshtml" />
+      <File FileName="Car-izma.web/Views/Car/Review.cshtml" />
+      <File FileName="Car-izma.web/Controllers/ContactController.cs" />
+      <File FileName="Car-izma.web/Views/Contact/Contact.cshtml" />
+      <File FileName="Car-izma.web/Views/ViewModel/SalesReportViewModel.cs" />
+      <File FileName="Car-izma.web/Views/Report/Sales.cshtml" Line="55" Column="62" />
+      <File FileName="Car-izma.web/Controllers/HomeController.cs" />
+      <File FileName="Car-izma.web/Controllers/ReportController.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Car-izma" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Car-izma.web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

@@ -1,0 +1,59 @@
+﻿@model Car_izma.data.Models.Satislar
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-dark text-white shadow-lg border-0">
+                <div class="card-body">
+                    <h3 class="mb-4 fw-bold text-danger text-center">Yeni Satış Ekle</h3>
+                    <form asp-action="Create" asp-controller="Sale" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Araba</label>
+                                <select id="carSelect" name="CarId" class="form-control bg-secondary text-white">
+                                    <option value="">-- Araba Seçin --</option>
+                                    @foreach (var car in ViewBag.Cars)
+                                    {
+                                        <option value="@car.CarId" data-fiyat="@(car.Fiyat?.ToString(System.Globalization.CultureInfo.InvariantCulture) ?? "0")">@car.Model</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="UserId" class="form-label">Satıcı</label>
+                                <select asp-for="UserId" class="form-control bg-secondary text-white" asp-items="ViewBag.Users">
+                                    <option value="">-- Satıcı Seçin --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="MusteriAdSoyad" class="form-label">Müşteri Ad Soyad</label>
+                                <input asp-for="MusteriAdSoyad" type="text" class="form-control bg-secondary text-white" placeholder="Müşteri Adı Soyadı">
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="MusteriTelefon" class="form-label">Müşteri Telefon</label>
+                                <input asp-for="MusteriTelefon" type="text" class="form-control bg-secondary text-white" placeholder="05xx xxx xx xx">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label asp-for="SatisFiyati" class="form-label">Satış Fiyatı</label>
+                                <input asp-for="SatisFiyati" id="satisFiyatiInput" type="number" class="form-control bg-secondary text-white" placeholder="Satış Fiyatı">
+                            </div>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-between">
+                            <button type="submit" class="btn btn-danger px-4">Ekle</button>
+                            <a href="@Url.Action("Sales", "Sale")" class="btn btn-secondary px-4">İptal</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>document.getElementById('carSelect').addEventListener('change', function () {
+        var selected = this.options[this.selectedIndex];
+        var fiyat = selected.getAttribute('data-fiyat');
+        if (fiyat && fiyat !== "0") {
+            document.getElementById('satisFiyatiInput').value = fiyat;
+        } else {
+            document.getElementById('satisFiyatiInput').value = '';
+        }
+    });</script>

@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Showroom";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Carizma </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Car_izma.web.styles.css" asp-append-version="true" />
+    <style>
+        .glass-navbar {
+            background: rgba(24, 25, 26, 0.85) !important;
+            backdrop-filter: blur(8px);
+            border-bottom: 3px solid #b30000;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.4);
+        }
+
+        .glass-hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .glass-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #18191a 60%, #b30000 100%);
+            opacity: 0.85;
+            z-index: 1;
+        }
+
+        .glass-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 3rem 2rem;
+            color: #fff;
+            text-shadow: 2px 2px 8px #b30000;
+        }
+
+        .navbar-nav .nav-link.active, .navbar-nav .nav-link:focus {
+            border-bottom: 2.5px solid #b30000;
+            border-radius: 0;
+        }
+
+        .navbar-nav .nav-link {
+            margin: 0 0.5rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .footer {
+            font-size: 0.95rem;
+            padding: 1rem 0 0.5rem 0;
+            background: #18191a !important;
+            border-top: 2px solid #b30000 !important;
+        }
+    </style>
+</head>
+
+<section class="glass-hero mx-2">
+    <div class="glass-hero-bg"></div>
+    <div class="container glass-hero-content text-center">
+        <h1 class="display-4 fw-bold">Welcome to Carizma</h1>
+        <p class="lead" style="
+                    color: #fff;
+                    font-size: 2rem;
+                    font-family: 'Oswald', 'Montserrat', 'Arial Black', Arial, sans-serif;
+                    font-weight: 900;
+                    letter-spacing: 1.5px;
+                    text-shadow: 0 2px 12px #b30000, 0 1px 0 #000;
+                    margin-top: 1.5rem;
+                    margin-bottom: 0;
+                ">ASSERTIVE. BOLD. UNFORGETTABLE CARS.</p>
+    </div>
+</section>
+<!-- HERO SECTION -->
+<section class="showroom-hero position-relative d-flex align-items-center justify-content-center" style="min-height: 80vh; background: url('/images/hero-car.jpg') center/cover no-repeat;">
+    <div class="hero-overlay position-absolute w-100 h-100" style="background: rgba(20,20,20,0.7); top:0; left:0;"></div>
+    <div class="container position-relative z-2 text-center text-white">
+        <h1 class="display-2 fw-bold mb-4" style="letter-spacing:2px; text-shadow:0 4px 24px #b30000;">DRIVE DIFFERENT</h1>
+        <p class="lead fs-3 mb-5" style="font-weight:600;">Hayalindeki arabaya bir adım daha yakınsın.</p>
+        <form class="row g-2 justify-content-center">
+            <div class="col-md-3">
+                <input type="text" class="form-control form-control-lg" placeholder="Marka veya Model">
+            </div>
+            <div class="col-md-2">
+                <input type="number" class="form-control form-control-lg" placeholder="Yıl" min="1900" max="2099">
+            </div>
+            <div class="col-md-2">
+                <select class="form-select form-select-lg">
+                    <option>Fiyat</option>
+                    <option>0-500K</option>
+                    <option>500K-1M</option>
+                    <option>1M+</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-danger btn-lg w-100">Ara</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+<!-- ADVANTAGES -->
+<section class="bg-black py-5" style="margin-top:50px;">
+    <div class="container">
+        <div class="row text-center text-white">
+            <div class="col-md-4">
+                <i class="bi bi-lightning-charge fs-1 text-danger"></i>
+                <h5 class="fw-bold mt-3">Hızlı Teslimat</h5>
+                <p>Satın aldığınız aracı 24 saat içinde teslim ediyoruz.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-shield-check fs-1 text-danger"></i>
+                <h5 class="fw-bold mt-3">Güvenli Alışveriş</h5>
+                <p>Tüm araçlarımız ekspertizden geçmiştir.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-star fs-1 text-danger"></i>
+                <h5 class="fw-bold mt-3">Müşteri Memnuniyeti</h5>
+                <p>Yüzlerce mutlu müşteri, yüksek puanlı hizmet.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
