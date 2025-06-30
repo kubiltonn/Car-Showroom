@@ -1,0 +1,1 @@
+This project is a project I made in soft-ITO Backend-2 training.It was made with DB-first logic.The project was developed as a Car Showroom.The user can add, review, update and delete cars.He can see the sales made and access reports.
